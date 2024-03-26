@@ -21,10 +21,10 @@ public class Main {
 //        Consumer consumer = new Consumer(buffer, 2);
 
         //кейс когда скорость потребление больше буфера, в этом случае будем приравнивать кол-во потребелния кол-ву буфера
-        Manufacturer manufacturer = new Manufacturer(buffer, 10);
-        Consumer consumer = new Consumer(buffer, 20);
 
-        manufacturer.getConsumersList().add(consumer);
+        Consumer consumer = new Consumer(buffer, 20);
+        Manufacturer manufacturer = new Manufacturer(buffer, 10, consumer);
+
         Thread threadManufacturer = new Thread(manufacturer);
         Thread threadConsumer = new Thread(consumer);
         threadManufacturer.start();

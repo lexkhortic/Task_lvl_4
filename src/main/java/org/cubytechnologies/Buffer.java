@@ -5,8 +5,8 @@ import java.util.Iterator;
 
 public class Buffer {
 
-    private int sizeBuffer;                  //размер буфера
-    private ArrayList<Integer> bufferItems;  //список серийных номеров буфера для обмена между Manufacturer и Consumer
+    private int sizeBuffer;                        //размер буфера
+    private final ArrayList<Integer> bufferItems;  //список серийных номеров буфера для обмена между Manufacturer и Consumer
 
     public Buffer(int sizeBuffer) {
         this.sizeBuffer = sizeBuffer;
@@ -23,10 +23,6 @@ public class Buffer {
 
     public ArrayList<Integer> getBufferItems() {
         return bufferItems;
-    }
-
-    public void setBufferItems(ArrayList<Integer> bufferItems) {
-        this.bufferItems = bufferItems;
     }
 
     //синхронизированный метод получения серийных номеров из буфера потребителю
